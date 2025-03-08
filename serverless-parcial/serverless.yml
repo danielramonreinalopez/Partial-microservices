@@ -1,0 +1,31 @@
+service: Parcial-atributos
+frameworkVersion: '3'
+
+plugins:
+ - serverless-offline 
+
+provider:
+  name: aws
+  runtime: python3.9
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
+
+  function_five_attributes:
+    handler: handler.function_five_attributes
+    events:
+      - http:
+          path: /function_five_attributes
+          method: get
+
+  function_ten_attributes:
+    handler: handler.function_ten_attributes
+    events:
+      - http:
+          path: /function_ten_attributes
+          method: get
